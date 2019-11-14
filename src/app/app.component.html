@@ -37,7 +37,7 @@
               <td>{{user.name}}</td>
               <td>{{user.age}}</td>
               <td>
-                  <button class="btn btn-warning m-1" data-toggle="modal" data-target="#exampleModal"> Update </button>
+                  <button class="btn btn-warning m-1" data-toggle="modal" data-target="#exampleModal" (click) = "getData(user._id)"> Update </button>
                   <button class="btn btn-danger m-1" (click) = "deleteUser(user._id)"> Delete </button>
               </td>
           </tr>
@@ -78,7 +78,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="updateUser(tempData._id)">Save changes</button>
       </div>
     </div>
   </div>

@@ -36,7 +36,12 @@ app.get('/user', (req, res) => {
         res.json(data);
     });
 });
-
+app.get('/user/:id', (req, res) => {
+    User.findOne({_id:req.params.id},(err, data) => {
+    if(err) res.json({"msg":"Invalid Request"});
+        res.json(data);
+    });
+});
 app.post('/user', urlEncoded, (req, res) => {
     var user = new User({
         name: req.body.name,
