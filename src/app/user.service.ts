@@ -10,8 +10,8 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  // public url:string = "http://localhost:80";
-  public url:string = "https://safe-brushlands-02866.herokuapp.com/";
+  // public url:string = "http://localhost";
+  public url:string = "https://git.heroku.com/safe-brushlands-02866.git";
   public headers = new HttpHeaders().set('Content-Type','application/json')
 
   constructor(public http:HttpClient) { }
