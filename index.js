@@ -12,10 +12,12 @@ mongoose.connect(
 
 const User = mongoose.model('user',{
     name: {
-        type: String
+        type: String,
+        require: true
     },
     age: {
-        type: Number
+        type: Number,
+        require: true
     }
 });
 
@@ -42,6 +44,22 @@ app.post('/user', urlEncoded, (req, res) => {
     });
     user.save((err, data) => {
         if(err) res.json({"msg":"Invalid Request"});
+        res.json(data);
+    });
+});
+app.put('/user/:id', urlEncoded, (req, res) => {
+    User.updateOne({_id:req.params.id},{
+        name: req.body.name,
+        age: req.body.age
+    }, (err, data) => {
+        if(err) res.json({msg:'Invalid request'});
+            res.json(data);
+    });
+});
+
+app.delete('/user/:id', (req, res) => {
+    User.deleteOne({_id:req.params.id},(err,data) => {
+    if(err) res.json({msg:'Invalid Request'});
         res.json(data);
     });
 });
