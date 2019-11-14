@@ -20,7 +20,7 @@ const User = mongoose.model('user',{
 });
 
 const app = new express();
-
+app.use(cors());
 app.use(express.static(__dirname + '/dist/app'));
 const urlEncoded = bodyParser.json();
 
