@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 mongoose.connect(
-    "mongodb+srv://tooth-gap:<password>@cluster0-vh64y.azure.mongodb.net/test?retryWrites=true&w=majority",{
+    "mongodb+srv://tooth-gap:<P4ssw0rd%2F>@cluster0-vh64y.azure.mongodb.net/test?retryWrites=true&w=majority",{
         useUnifiedTopology : true,
         useNewUrlParser : true
     }

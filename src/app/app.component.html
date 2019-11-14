@@ -17,7 +17,7 @@
           <div class="form-group">
               <label>Age</label>
               <div class="form-inline row">
-                <input type="text" name="userAge" required #age="ngModel" [(ngModel)]="userAge" [class.invalid]="age.invalid && age.touched" class="form-control col-10 ml-3"><span class="col" *ngIf="age.invalid">*</span>
+                <input type="number" name="userAge" required #age="ngModel" [(ngModel)]="userAge" [class.invalid]="age.invalid && age.touched" class="form-control col-10 ml-3"><span class="col" *ngIf="age.invalid">*</span>
               </div>
               <div *ngIf="age.invalid && age.touched" class="text text-danger">this is required</div>
           </div>
